@@ -286,18 +286,19 @@ const formulario = document.getElementById("formContato");
 
 if (formulario) {
     formulario.addEventListener("submit", function (evento) {
-
         evento.preventDefault();
 
-        const nome = document.getElementById("nome").value;
-        const email = document.getElementById("email").value;
-        const telefone = document.getElementById("telefone").value;
-        const assunto = document.getElementById("assunto").value;
-        const mensagem = document.getElementById("mensagem").value;
+        const nome = document.getElementById("nome").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const telefone = document.getElementById("telefone").value.trim();
+        const assunto = document.getElementById("assunto").value.trim();
+        const mensagem = document.getElementById("mensagem").value.trim();
 
         const destinatario = "mysczak.prestes@escola.pr.gov.br";
 
-        const assuntoEmail = encodeURIComponent("Contato pelo site - " + assunto);
+        const assuntoEmail = encodeURIComponent(
+            "Contato pelo site - " + assunto
+        );
 
         const corpoEmail = encodeURIComponent(
             `Nome: ${nome}\n` +
@@ -306,12 +307,9 @@ if (formulario) {
             `Mensagem:\n${mensagem}`
         );
 
-     const linkGmail =
-    `https://mail.google.com/mail/?view=cm&fs=1` +
-    `&to=${encodeURIComponent(destinatario)}` +
-    `&su=${assuntoEmail}` +
-    `&body=${corpoEmail}`;
+        const linkEmail =
+            `mailto:${destinatario}?subject=${assuntoEmail}&body=${corpoEmail}`;
 
-window.open(linkGmail, "_blank");
+        window.location.href = linkEmail;
     });
 }
