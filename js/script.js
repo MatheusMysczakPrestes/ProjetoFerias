@@ -295,7 +295,7 @@ if (formulario) {
         const assunto = document.getElementById("assunto").value;
         const mensagem = document.getElementById("mensagem").value;
 
-        const destinatario = "SEUEMAIL@gmail.com";
+        const destinatario = "mysczak.prestes@escola.pr.gov.br";
 
         const assuntoEmail = encodeURIComponent("Contato pelo site - " + assunto);
 
