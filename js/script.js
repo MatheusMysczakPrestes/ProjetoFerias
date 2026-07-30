@@ -306,7 +306,12 @@ if (formulario) {
             `Mensagem:\n${mensagem}`
         );
 
-        window.location.href =
-            `mailto:${destinatario}?subject=${assuntoEmail}&body=${corpoEmail}`;
+     const linkGmail =
+    `https://mail.google.com/mail/?view=cm&fs=1` +
+    `&to=${encodeURIComponent(destinatario)}` +
+    `&su=${assuntoEmail}` +
+    `&body=${corpoEmail}`;
+
+window.open(linkGmail, "_blank");
     });
 }
