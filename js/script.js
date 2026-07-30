@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        alert("Mensagem enviada com sucesso!");
+        alert("Mensagem enviada com sucesso, para prosseguir, selecione o Gmail!");
 
         formulario.reset();
 
